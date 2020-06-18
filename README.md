@@ -1,2 +1,2 @@
 # Duroth.github.io
-Perosnal github pages
+Personal github pages
