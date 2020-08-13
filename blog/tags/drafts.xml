@@ -1,42 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <title>Home &mdash; Duroth.github.io &mdash; Dutch Developer&#039;s Dubious Discourse</title>
-        <meta charset="utf-8">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                    <meta name="robots" content="noindex, follow">
-                <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="/build/app.css">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-
-        <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Duroth.github.io activity feed" />
-                                    </head>
-    <body>
-        <div id="page-container">
-            <header id="page-container--header">
-                <nav>
-                    <a class="navbar-brand" href="/">🐒 Duroth.github.io</a>
-                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/blog">Archive</a></li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <main id="page-container--main">
-                <article>
-    <header>
-        <a href="/blog/2020/08/10/writing-a-simple-job-queue-in-redis"><h2>Writing a simple job queue in Redis</h2></a>
-    </header>
-
-    <div>
-        <p><img src="/assets/images/photos/pexels-queue.jpg" alt="People in a queue" /></p>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Duroth.github.io]]></title>
+    <link href="/blog/tags/drafts.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2020-08-13T18:21:23+02:00</updated>
+    <id>/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <title type="html"><![CDATA[Writing a simple job queue in Redis]]></title>
+            <link href="/blog/2020/08/10/writing-a-simple-job-queue-in-redis"/>
+            <updated>2020-08-10T00:00:00+02:00</updated>
+            <id>/blog/2020/08/10/writing-a-simple-job-queue-in-redis</id>
+            <content type="html"><![CDATA[<p><img src="/assets/images/photos/pexels-queue.jpg" alt="People in a queue" /></p>
 
 <p>At my job, most of our time is spent connecting to unwieldy SOAP APIs or writing clients for massive
 legacy applications running on ancient software stacks. Running these tasks asynchronously would heavily cut down on
@@ -239,37 +214,6 @@ demanding algorithms to newer, more well-equipped servers, and run asynchronous 
 <p>If you're looking for a small, easily embeddable task queue, and you're already familiar with Redis, check out
 <a href="https://github.com/Duroth/gearmonkey">GearMonkey</a> on Github! The full specification is tiny, counting only 222 lines:
 About as long as this blog post!</p>
-
-    </div>
-
-    <footer class="post_meta">
-        <dl>
-            <dt>Date</dt>
-            <dd>10-08-2020</dd>
-            <dt>Categories</dt>
-            <dd class="categories">
-                                <a href="/blog/categories/technology">technology</a>
-                            </dd>
-            <dt>Tags</dt>
-            <dd class="tags">
-                                <a href="/blog/tags/redis">redis</a>
-                                <a href="/blog/tags/message_queue">message_queue</a>
-                                <a href="/blog/tags/drafts">drafts</a>
-                            </dd>
-            <dt>Permalink</dt>
-            <dd><a href="/blog/2020/08/10/writing-a-simple-job-queue-in-redis">Link</a></dd>
-        </dl>
-    </footer>
-</article>
-            </main>
-            <aside id="page-container--aside">
-                            </aside>
-            <footer id="page-container--footer">
-                <span class="text-muted">&copy; 2020 Duroth.github.io</span>
-            </footer>
-        </div>
-        <script src="/build/app.js"></script>
-                
-        
-                    </body>
-</html>
+]]></content>
+        </entry>
+    </feed>
