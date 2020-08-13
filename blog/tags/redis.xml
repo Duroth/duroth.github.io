@@ -3,7 +3,7 @@
     <title><![CDATA[Duroth.github.io]]></title>
     <link href="/blog/tags/redis.xml" rel="self"/>
     <link href="/"/>
-    <updated>2020-08-13T18:21:23+02:00</updated>
+    <updated>2020-08-13T18:26:41+02:00</updated>
     <id>/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -11,7 +11,7 @@
             <link href="/blog/2020/08/10/writing-a-simple-job-queue-in-redis"/>
             <updated>2020-08-10T00:00:00+02:00</updated>
             <id>/blog/2020/08/10/writing-a-simple-job-queue-in-redis</id>
-            <content type="html"><![CDATA[<p><img src="/assets/images/photos/pexels-queue.jpg" alt="People in a queue" /></p>
+            <content type="html"><![CDATA[<p><img src="/build/img/photos/pexels-queue.jpg" alt="People in a queue" /></p>
 
 <p>At my job, most of our time is spent connecting to unwieldy SOAP APIs or writing clients for massive
 legacy applications running on ancient software stacks. Running these tasks asynchronously would heavily cut down on
