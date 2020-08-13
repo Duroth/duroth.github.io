@@ -1,5 +1,6 @@
 {
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
-  "build/img/photos/pexels-queue.jpg": "/build/img/photos/pexels-queue.jpg"
+  "build/img/photos/pexels-queue.jpg": "/build/img/photos/pexels-queue.jpg",
+  "build/ico/favicon.png": "/build/ico/favicon.png"
 }
