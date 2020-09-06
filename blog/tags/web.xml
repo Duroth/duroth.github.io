@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Duroth.github.io]]></title>
+    <link href="/blog/tags/web.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2020-09-06T13:13:47+02:00</updated>
+    <id>/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <title type="html"><![CDATA[Bookmarklets Rediscovered]]></title>
+            <link href="/blog/2020/09/06/bookmarklets-rediscovered"/>
+            <updated>2020-09-06T00:00:00+02:00</updated>
+            <id>/blog/2020/09/06/bookmarklets-rediscovered</id>
+            <content type="html"><![CDATA[<p><img src="/build/img/photos/pexels-chrome.jpg" alt="Google Chrome on a mobile device" /></p>
+
+<p>Years ago, during the Dark Age of Technology (no, not <a href="https://warhammer40k.fandom.com/wiki/Age_of_Technology">this one</a>), webbrowsers weren't the all-encompassing behemoths
+they are today. They didn't need to be; websites were mostly static text, made up with some HTML, a splash of CSS, and,
+if the website was truly fancy, a few lines of Javascript to provide that extra "wow" factor. This was the age before
+browser-driven web apps, before the Web API, and before browser extensions.</p>
+
+<p>Back then, when you wanted to expand or improve a website's (or the browser's) functionality, your only option was the
+humble <strong>Bookmarklet</strong> - a small piece of Javascript code stored in the browser as a bookmark or favorite, that is run
+in the context of the current page when you click it. Bookmarklets have been a feature of browsers for nearly 25 years now,
+and even when browser extensions made them all but obsolete, bookmarklets haven't gone anywhere.</p>
+
+<p>Today, with more and more technology being powered by web browsers every day - from games to Office applications
+to graphics editors and everything in between - the bookmarklet might be due a strong comeback.</p>
+
+<h3 id="what-are-bookmarklets%2C-and-how-do-you-use-them%3F">What are bookmarklets, and how do you use them?</h3>
+
+<p>All (common) browsers support bookmarks, sometimes called <em>favorites</em>: Links to webpages, stored inside your browser, that you can
+visit with a single click. They're a great way to remember your favorite or most used websites, but they have a second,
+more or less hidden function - you can store scripts, instead of links, and these scripts are run inside the page you're
+currently on, when you click the bookmark. These scripts are <em>usually</em> fairly short, but there's really no limit on what
+these scripts can do. Or at least, there didn't use to be.</p>
+
+<p>These 'special' bookmarks are called <strong>Bookmarklets</strong>, and they've been around for a long, <em>long</em> time. And although
+they've seen their share of use in offices and business environments, bookmarklets have never been commonplace in the
+outside world.</p>
+
+<p>But why not? Bookmarklets are incredibly useful. And even though recent security features have closed off some of the
+functionality that bigger bookmarklets relied on, the simple 'one-liners' continue to work across nearly all browsers
+and devices.</p>
+
+<p>Bookmarklets can help make your favorite sites even better, by adding missing functionality or improving what's already
+there. While they can't magically create something from nothing, they can expose hidden information, or transform large
+swaths of messy data into easily digestible chunks of information. And they're certainly not for developers only! If
+you've ever been required to use specific websites, for any reason, chances are you've found something you wish simply
+worked... <em>Better</em>.</p>
+
+<h3 id="disclaimer%3A-be-careful-who-and-what-you-trust%21">Disclaimer: Be careful who and what you trust!</h3>
+
+<p>As we'll explore some bookmarklets that I've personally written or used, please keep in mind the following disclaimer.</p>
+
+<p><strong>Bookmarklets, like all other scripts, can be malicious, and can be used to, for example, steal account details or
+personal information. Remain cautious, and don't trust people blindly, especially when they claim to act solely in <em>your</em>
+best interests. This also goes for everything you'll find in this article. ;)</strong></p>
+
+<h3 id="how-to-create-bookmarklets">How to create bookmarklets</h3>
+
+<p>Bookmarklets are created the same way as any bookmark, but might require a few more steps in some cases. Most browsers
+have a "bookmark this site" button, but might not have a conventional "create bookmark" button, or may have it hidden
+out of sight. In Chrome, you can either:</p>
+
+<ul>
+<li>Press <code>Ctrl</code> + <code>D</code> to bookmark the current tab, and right-click it to edit the properties;</li>
+<li>Click <code>⋮</code> ('More') > <code>Bookmarks</code> > <code>Bookmark Manager</code>.
+Once there, click the top-rightmost <code>⋮</code> ('More') button > <code>Create bookmark</code> to create a blank bookmark.</li>
+</ul>
+
+<p>In short; the easiest option is to bookmark the current page, then edit the newly created bookmark, and edit both the
+name and location (URL) of the bookmark.</p>
+
+<p>Bookmarklets always start with <code>javascript:</code>, as opposed to <code>http:</code> or <code>https:</code> for regular bookmarks. After this comes
+the full, valid javascript. So to create a bookmarklet, paste the script in the URL (location) field, and ensure it's
+prefixed with <code>javascript:</code>.</p>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="input-field-word-counter">Input field word counter</h4>
+
+<p>Worried about hitting an invisible maximum character or word count when typing? The following bookmarklet shows the
+word and character count for the input element you're currently typing in, or the text you currently have selected.</p>
+
+<p><strong>Bookmarklet:</strong></p>
+
+<pre><code>javascript:!function(){var e,n=document.activeElement,t=document.getSelection();if(!n||"INPUT"!=n.nodeName&amp;&amp;"TEXTAREA"!=n.nodeName){if(!t.length)return;e=t}else e=n.value;var o=e.length,l=e.split(/\s+/).length;window.alert(`Word count: ${l}\nChar count: ${o}`)}();
+</code></pre>
+
+<p><strong>Documented Source:</strong></p>
+
+<pre><code class="js">(function(){
+    var txt;
+    var activeEl = document.activeElement; // Get the currently selected element on the page
+    var selection = document.getSelection(); // Get the currently selected text on the page
+    if (activeEl &amp;&amp; (activeEl.nodeName == 'INPUT' || activeEl.nodeName == 'TEXTAREA')) {
+        txt = activeEl.value; // If the selected element is an input of some kind, grab its contents as the marked text
+    } else if (selection.length) {
+        txt = selection; // Otherwise, grab the selected text on the page
+    } else {
+        return; // If neither of the above apply, skip the rest of the function.
+    }
+
+    var clen = txt.length; // Character length: Number of individual characters in the string.
+    var wlen = txt.split(/\s+/).length; // Word count: Approximated by splitting on whitespace and counting the items.
+
+    window.alert(`Word count: ${wlen}\nChar count: ${clen}`); // Tell the values through an alert window.
+})()
+</code></pre>
+
+<h4 id="password-visibility-toggle">Password visibility toggle</h4>
+
+<p>A lot of websites and mobile browsers nowadays have a "show/hide password" button next to password fields that switches
+between readable text and asterisks / dots. This bookmarklet mimics this functionality for sites where it's missing.</p>
+
+<p><strong>Bookmarklet:</strong></p>
+
+<pre><code>javascript:!function(){var t=document.activeElement;t&amp;&amp;"INPUT"==t.nodeName&amp;&amp;("password"===t.type?(t.type="text",t.dataset.is_password=!0):t.dataset.is_password&amp;&amp;(t.type="password"))}();
+</code></pre>
+
+<p><strong>Documented Source:</strong></p>
+
+<pre><code class="js">(function(){
+  var input = document.activeElement; // Get the currently selected element on the page
+  if (!(input &amp;&amp; input.nodeName=='INPUT')) { return; } // Do nothing if it's not an input field
+
+  if (input.type === 'password') { input.type = 'text'; input.dataset['is_password'] = true; } // Mark as 'text' and store the state;
+  else if (input.dataset['is_password']) { input.type = 'password'; } // Or reset the field to 'password' type
+})();
+</code></pre>
+
+<h3 id="my-bookmarklet-library">My bookmarklet library</h3>
+
+<p>In light of this article, I've set up a small, curated bookmarklet library. It's public, and freely available to
+everyone! Take a look at <a href="https://github.com/Duroth/bookmarklet-library/">Duroth/bookmarklet-library @ GitHub</a>.</p>
+]]></content>
+        </entry>
+    </feed>
